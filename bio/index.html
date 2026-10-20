@@ -1,75 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>David Kangas | Professional Background</title>
+  <title>About Dave | Kangas Works</title>
 
   <meta name="description"
-        content="David Kangas is an independent software developer with a background in business operations, legal risk management, and AI governance.">
+        content="Meet Dave Kangas, the builder behind Kangas Works. From industrial construction to independent software development, it's been an interesting road.">
 
   <style>
+    :root {
+      --background: #f7f6f2;
+      --text: #252525;
+      --muted: #666666;
+      --accent: #c76b32;
+      --border: #d8d6d0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont,
                    "Segoe UI", Arial, sans-serif;
-      max-width: 800px;
-      margin: 80px auto;
-      line-height: 1.7;
-      padding: 0 20px;
-      color: #111;
-      background: #fff;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.75;
     }
 
-    a:link,
-    a:visited {
-      color: #111;
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 2px;
       text-decoration: none;
-      border-bottom: 1px solid #ccc;
+      color: var(--text);
     }
 
-    a:hover,
-    a:active {
-      border-bottom: 1px solid #111;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      margin-top: 40px;
-      font-size: 20px;
-    }
-
-    p {
-      margin: 10px 0;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .subtitle {
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      body {
-        margin: 40px auto;
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 90px 0 65px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin: 0 0 24px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 20px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .story {
+      max-width: 740px;
+      padding-top: 60px;
+      padding-bottom: 70px;
+    }
+
+    h2 {
+      font-size: 27px;
+      letter-spacing: -0.5px;
+      margin: 55px 0 20px;
+      line-height: 1.3;
+    }
+
+    .story h2:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 0 0 22px;
+    }
+
+    .story p {
+      font-size: 17px;
+    }
+
+    .closing {
+      margin-top: 60px;
+      padding-top: 35px;
+      border-top: 1px solid var(--border);
+    }
+
+    .closing p {
+      font-size: 18px;
+    }
+
+    .text-link {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 650px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      h1 {
-        font-size: 30px;
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .story {
+        padding-top: 40px;
+        padding-bottom: 50px;
+      }
+
+      .story p {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-top: 45px;
       }
     }
   </style>
@@ -77,138 +197,345 @@
 
 <body>
 
-  <h1>David Kangas</h1>
+  <header>
+    <div class="container header-inner">
 
-  <p class="subtitle">
-    Business Operations | Legal Risk Management |
-    AI Governance | Software Development
-  </p>
+      <a class="brand" href="/">KANGAS WORKS</a>
 
-  <h2>Background</h2>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/#apps">Apps</a>
+        <a href="/#development">On the Bench</a>
+        <a href="/#contact">Contact</a>
+      </nav>
 
-  <p>
-    My professional background spans industrial construction,
-    business operations, legal risk management, and independent
-    software development.
-  </p>
+    </div>
+  </header>
 
-  <p>
-    I began my career in the skilled trades, completing a
-    boilermaker apprenticeship and advancing into supervisory
-    roles in industrial construction.
-  </p>
+  <main>
 
-  <p>
-    I later earned a degree in business and a Juris Master
-    in Legal Risk Management from Florida State University
-    College of Law.
-  </p>
+    <div class="container">
 
-  <p>
-    These experiences shaped my approach to problem-solving:
-    understand how a system actually works, identify unnecessary
-    friction, and develop practical solutions that improve
-    consistency, efficiency, and accountability.
-  </p>
+      <div class="hero">
 
-  <h2>AI Governance & Risk Management</h2>
+        <div class="eyebrow">The Guy Behind the Work</div>
 
-  <p>
-    <strong>AI Governance That Doesn't Slow Your Team Down</strong>
-  </p>
+        <h1>Welcome to the Workshop.</h1>
 
-  <p>
-    I help organizations identify friction in AI workflows
-    and build systems that manage risk without disrupting
-    how teams operate.
-  </p>
+        <p>
+          I'm Dave Kangas. There's usually something
+          on the bench around here, so come on in
+          and have a look.
+        </p>
 
-  <h2>Areas of Focus</h2>
+      </div>
 
-  <ul>
-    <li>
-      Identify friction and risk across AI-enabled workflows.
-    </li>
+      <article class="story">
 
-    <li>
-      Design governance frameworks aligned with how teams
-      actually operate.
-    </li>
+        <h2>A Little About Me</h2>
 
-    <li>
-      Translate evolving AI regulations into practical,
-      operational controls.
-    </li>
-  </ul>
+        <p>
+          I build things.
+        </p>
 
-  <h2>Approach</h2>
+        <p>
+          For a good portion of my life, that meant
+          working with steel, welding equipment,
+          and an oxyacetylene torch. These days,
+          it might mean developing an iPhone app,
+          designing a business management system,
+          or figuring out whether an outrageous
+          engine swap would actually work.
+        </p>
 
-  <p>
-    Most AI governance introduces friction because it is
-    layered on after the fact, through policies that don't
-    match how teams actually work.
-  </p>
+        <p>
+          Different tools. Same curiosity.
+        </p>
 
-  <p>
-    I focus on identifying where friction already exists
-    in AI workflows, then designing systems that integrate
-    directly into operations.
-  </p>
+        <h2>The Long Way Around</h2>
 
-  <p>
-    The goal isn't just compliance. It's enabling teams
-    to move quickly with the right controls in place.
-  </p>
+        <p>
+          I started my professional life as a boilermaker.
+          It wasn't exactly a childhood dream.
+          I went to welding school because I needed
+          to figure out what I was going to do with
+          myself, and an instructor suggested I might
+          make a decent boilermaker.
+        </p>
 
-  <h2>Example Work</h2>
+        <p>
+          Turns out, Dan knew what he was talking about.
+        </p>
 
-  <p>
-    Designed a structured intake and decision system
-    to standardize client evaluation and reduce ambiguity
-    in operational workflows.
-  </p>
+        <p>
+          I worked my way from apprentice to general
+          foreman in industrial construction. I loved
+          the work, especially the challenges that
+          required a little ingenuity and the
+          occasional creative use of language.
+        </p>
 
-  <p>
-    <strong>Result:</strong>
-    Improved consistency in decision-making and reduced
-    subjective variance across cases.
-  </p>
+        <p>
+          Unfortunately, my heart had other ideas.
+        </p>
 
-  <h2>Independent Software Development</h2>
+        <p>
+          Heart failure brought my career in the
+          trades to an early end and sent me down
+          a few roads I hadn't anticipated.
+          I went back to school, earned a business
+          degree, and spent some time figuring out
+          what the next chapter was supposed to
+          look like.
+        </p>
 
-  <p>
-    Through Kangas Works, I develop practical software
-    applications focused on solving specific problems
-    without introducing unnecessary complexity.
-  </p>
+        <p>
+          Eventually, I moved to Florida, underwent
+          a heart transplant, and decided that maybe
+          I wasn't finished reinventing myself.
+        </p>
 
-  <p>
-    My development philosophy emphasizes intuitive interfaces,
-    thoughtful interaction design, and software that respects
-    the user's time and attention.
-  </p>
+        <p>
+          So I went back to school again.
+        </p>
 
-  <p>
-    Current projects include ANVAIR, an Apple Watch
-    strength-training rest timer, and Coach Method,
-    an iPhone application inspired by traditional
-    strength-training charts.
-  </p>
+        <p>
+          This time I earned a Juris Master in Legal
+          Risk Management from Florida State University.
+          Somewhere along the way, I discovered
+          that modern software tools could help me
+          turn some of the ideas rattling around
+          in my head into actual working products.
+        </p>
 
-  <h2>Contact</h2>
+        <p>
+          It's been a winding road, but every turn
+          seems to have added another tool to the box.
+        </p>
 
-  <p>
-    Email:
-    <a href="mailto:davidkangasconsulting@proton.me">
-      davidkangasconsulting@proton.me
-    </a>
-  </p>
+        <p>
+          And I've always liked tools.
+        </p>
 
-  <div class="footer">
-    <p>
-      <a href="/">← Kangas Works</a>
-    </p>
-  </div>
+        <h2>A Different Kind of Workshop</h2>
+
+        <p>
+          My interest in software began with a
+          familiar frustration: I couldn't find
+          exactly what I wanted.
+        </p>
+
+        <p>
+          I have a particular dislike for products
+          that are <em>almost</em> right. The ones
+          that make you jump through six screens
+          to accomplish something that ought
+          to take two taps.
+        </p>
+
+        <p>
+          So I started building my own.
+        </p>
+
+        <p>
+          My first published app, ANVAIR, is an
+          Apple Watch workout timer designed to
+          do one thing exceptionally well.
+          It looks pretty simple, which is exactly
+          the point. Getting it to feel that simple
+          took considerably more work than I expected.
+        </p>
+
+        <p>
+          That's become something of a philosophy
+          around here.
+        </p>
+
+        <p>
+          I like focused tools. Your phone is
+          already a Swiss Army knife. I don't
+          need to build another one. I'd rather
+          make a really good attachment for
+          the one you've already got.
+        </p>
+
+        <p>
+          Sometimes that means writing software.
+          Other times it means using tools like
+          AppSheet to turn a collection of notebooks,
+          checklists, and half-remembered conversations
+          into an actual business management system.
+        </p>
+
+        <p>
+          The technology is interesting, but making
+          something useful is the fun part.
+        </p>
+
+        <h2>More Than Software</h2>
+
+        <p>
+          Kangas Works is one part of a larger
+          collection of creative and entrepreneurial
+          pursuits.
+        </p>
+
+        <p>
+          My wife, Jody, and I operate Heart &amp; Harbor,
+          a lifestyle apparel brand featuring our
+          original artwork and designs. It's a way
+          to get our creative work out into the world
+          without having to explain it to somebody
+          in an art gallery.
+        </p>
+
+        <p>
+          I also operate Homeward Support, a property
+          monitoring business here on Florida's
+          Gulf Coast. What started as helping
+          neighbors keep an eye on their homes
+          has grown into a proper business,
+          complete with a management and reporting
+          system I built myself.
+        </p>
+
+        <p>
+          And then there are the projects that
+          exist simply because I think they'd
+          be fun.
+        </p>
+
+        <p>
+          I've always had a fascination with
+          cars and boats. I can spend an
+          unreasonable amount of time contemplating
+          the engineering behind a completely
+          impractical automotive creation.
+        </p>
+
+        <p>
+          Sometimes the problem you're solving
+          is how to make a workout more efficient.
+        </p>
+
+        <p>
+          Sometimes it's figuring out what a
+          '71 Chevelle with an LS7 and 4.11 gears
+          might run in the quarter mile.
+        </p>
+
+        <p>
+          Both seem like perfectly reasonable
+          uses of an afternoon to me.
+        </p>
+
+        <h2>Kangas Works</h2>
+
+        <p>
+          The name has a couple of meanings.
+        </p>
+
+        <p>
+          There's the connection to the workshops,
+          fabrication shops, and industrial
+          environments where I spent my early career.
+        </p>
+
+        <p>
+          But there's also a little wordplay.
+        </p>
+
+        <p>
+          <strong>Kangas? He works.</strong>
+        </p>
+
+        <p>
+          I like that.
+        </p>
+
+        <p>
+          I'm not entirely sure whether Kangas Works
+          is a software studio, a creative workshop
+          disguised as a business, or a business
+          disguised as a creative workshop.
+        </p>
+
+        <p>
+          Maybe I'll have a better answer
+          in five years.
+        </p>
+
+        <div class="closing">
+
+          <p>
+            What I do know is that I'm enjoying
+            this chapter of my life. I've had some
+            extraordinary experiences, a few I'd
+            rather not repeat, and plenty of
+            opportunities to discover what I'm
+            capable of.
+          </p>
+
+          <p>
+            I don't feel much need to prove
+            anything anymore.
+          </p>
+
+          <p>
+            There's always another project on
+            the bench, another idea worth exploring,
+            and something new to learn. I don't
+            expect that will ever change.
+          </p>
+
+          <p>
+            But I've reached a point where I can
+            look at the things I've done, the people
+            in my life, and the things I'm still
+            creating and feel genuinely satisfied.
+          </p>
+
+          <p>
+            I'm not finished. Not even close.
+          </p>
+
+          <p>
+            But I've done enough to be happy
+            with where I am.
+          </p>
+
+          <p>
+            Anyway, that's enough about me.
+            What are you working on?
+            <a class="text-link"
+               href="mailto:david@dkangas.com">
+              Drop me a line.
+            </a>
+            And if you want to talk boats,
+            you might want to pull up a chair.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+
+      <span>© 2026 Kangas Works</span>
+
+      <span>
+        <a class="text-link" href="/">
+          Back to the Workshop →
+        </a>
+      </span>
+
+    </div>
+  </footer>
 
 </body>
 </html>
