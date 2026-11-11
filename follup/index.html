@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Follup | Kangas Works</title>
+  <meta name="description"
+        content="Follup is a lightweight reminder app for keeping track of people you want to follow up with. Simple reminders without the complexity of a CRM.">
+
+  <style>
+    :root {
+      --background: #f7f6f2;
+      --text: #252525;
+      --muted: #666666;
+      --accent: #c76b32;
+      --teal: #244f5c;
+      --border: #d8d6d0;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 80px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 0 0 24px;
+    }
+
+    .tagline {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 600;
+      line-height: 1.35;
+      margin: 0 0 22px;
+    }
+
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 19px;
+      margin: 0;
+    }
+
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      margin: 0 0 20px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 26px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .feature h3 {
+      font-size: 19px;
+      line-height: 1.3;
+      margin: 0 0 12px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    figure {
+      margin: 0;
+      min-width: 0;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    figcaption {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    figcaption strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .status-panel {
+      border-left: 4px solid var(--teal);
+      padding: 8px 0 8px 24px;
+      max-width: 700px;
+    }
+
+    .status-panel p {
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .status-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .text-link {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    footer {
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshots {
+        grid-template-columns: 1fr;
+        max-width: 390px;
+        margin: 0 auto;
+        gap: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="/">KANGAS WORKS</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Back to the Workshop</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <div class="hero">
+        <div class="eyebrow">Kangas Works / Pilot Testing</div>
+
+        <h1>Follup.</h1>
+
+        <p class="tagline">
+          People are worth remembering.<br>
+          Follow-ups should be easy.
+        </p>
+
+        <p class="intro">
+          Whether it's checking in with a friend,
+          reconnecting with a colleague, or following
+          up on a conversation, Follup helps you
+          remember when to reach out.
+          No complicated CRM. No cluttered calendar.
+          Just the follow-ups that matter to you.
+        </p>
+      </div>
+
+      <section>
+        <h2>Keep it simple.</h2>
+
+        <p class="section-intro">
+          Add a person, jot down what it's about,
+          and choose when you'd like to follow up.
+          Follup keeps the process straightforward.
+        </p>
+
+        <div class="feature-grid">
+
+          <article class="feature">
+            <h3>Remember the conversation.</h3>
+            <p>
+              Keep a name and a short note together
+              so you know exactly why you wanted
+              to reconnect.
+            </p>
+          </article>
+
+          <article class="feature">
+            <h3>Set your own pace.</h3>
+            <p>
+              Choose a reminder in days, weeks,
+              or months. Pick a time that works
+              for you.
+            </p>
+          </article>
+
+          <article class="feature">
+            <h3>Stay on top of things.</h3>
+            <p>
+              See your follow-ups in chronological
+              order, make changes when plans shift,
+              and mark them when you've followed up.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <section>
+        <h2>See Follup in action.</h2>
+
+        <p class="section-intro">
+          Three steps, one straightforward workflow.
+          These are screenshots from the actual app.
+        </p>
+
+        <div class="screenshots">
+
+          <figure>
+            <img src="images/contacts.png"
+                 alt="Follup contact list with upcoming reminders arranged chronologically"
+                 loading="lazy">
+            <figcaption>
+              <strong>1. See what's coming up.</strong>
+              Your next follow-ups, organized
+              by when they're due.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/add-contact.png"
+                 alt="Adding George Washington with a note and a reminder interval"
+                 loading="lazy">
+            <figcaption>
+              <strong>2. Add a follow-up.</strong>
+              Enter a name, add a note, and
+              choose days, weeks, or months.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/edit-contact.png"
+                 alt="Editing Ben Franklin's follow-up directly within his contact card"
+                 loading="lazy">
+            <figcaption>
+              <strong>3. Change plans anytime.</strong>
+              Adjust a reminder directly in
+              the contact card.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section>
+        <h2>Currently in pilot testing.</h2>
+
+        <div class="status-panel">
+          <p>
+            Follup is being prepared for its first
+            round of community testing. Feedback
+            from early testers will help refine
+            the experience before public release.
+          </p>
+
+          <p>
+            Built for iPhone and Android.
+            Public download links will be added
+            as releases become available.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Talk shop.</h2>
+
+        <p class="section-intro">
+          Have a question about Follup or
+          an idea you'd like to share?
+          I'd be happy to hear from you.
+        </p>
+
+        <a class="text-link"
+           href="mailto:hello@dkangas.com?subject=Follup">
+          hello@dkangas.com
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Kangas Works</span>
+      <span>Independent software. Thoughtfully built.</span>
+    </div>
+  </footer>
+</body>
+</html>
